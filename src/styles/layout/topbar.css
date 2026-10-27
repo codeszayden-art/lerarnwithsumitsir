@@ -1,0 +1,86 @@
+/* =====================================================
+   Top bar (campus pill + socials)
+   ===================================================== */
+
+.top {
+  background: linear-gradient(90deg, #fff1d6, #ffe3a8, #fff1d6);
+  color: #0f1b33;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+}
+
+.topmap {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.top .wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  flex-wrap: wrap;
+}
+
+.top b {
+  font-weight: 600;
+}
+
+.pill {
+  background: #fff;
+  border-radius: 99px;
+  padding: 3px 12px;
+  font-weight: 600;
+  min-width: 120px;
+  text-align: center;
+  transition: opacity .3s, transform .3s;
+}
+
+.pill.sw {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.top .calc {
+  font-weight: 700;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: 6px;
+}
+
+.top a.so {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #0f1b33;
+  color: #f4a31b;
+  transition: background .2s, color .2s, transform .2s;
+}
+
+.top a.so:hover {
+  background: rgba(255, 255, 255, .7);
+  color: #0f1b33;
+  transform: translateY(-1px);
+}
+
+.top a.k {
+  background: #0f1b33;
+  color: #fff;
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}

@@ -1,0 +1,299 @@
+/* =====================================================
+   Header, navigation and mega menu
+   ===================================================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 64px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.logo .lw {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .logo .lc {
+    display: none;
+  }
+
+  :root:not([data-theme="light"]) .logo .lw {
+    display: block;
+  }
+}
+
+:root[data-theme="dark"] .logo .lc {
+  display: none;
+}
+
+:root[data-theme="dark"] .logo .lw {
+  display: block;
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: auto;
+}
+
+.links a {
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+}
+
+.links a:hover {
+  border-color: var(--gold);
+}
+
+.burger {
+  display: none;
+  background: none;
+  border: 0;
+  font-size: 26px;
+  color: var(--ink);
+}
+
+@media (max-width: 860px) {
+  .links,
+  nav>.btn.o {
+    display: none;
+  }
+
+  .burger {
+    display: block;
+    margin-left: auto;
+  }
+
+  .links.open {
+    display: flex;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--bg);
+    flex-direction: column;
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+.links {
+  align-items: stretch;
+}
+
+.dd {
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+.mg {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-top: 1px solid var(--line);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: .25s;
+}
+
+.dd:hover .mg,
+.dd:focus-within .mg {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+}
+
+.mgi {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  padding: 26px 20px;
+}
+
+.mg h5 {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: var(--mut);
+  font-weight: 600;
+}
+
+.mg a {
+  display: block;
+  padding: 6px 0;
+  font-weight: 500;
+  border: 0;
+  color: var(--ink);
+}
+
+.mg a:hover {
+  color: var(--blue);
+  transform: translateX(4px);
+}
+
+.mg .pm {
+  background: linear-gradient(140deg, #01094f, #1b2a8c);
+  color: #fff;
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.mg .pm a {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .mg {
+    display: none !important;
+  }
+
+  .dd {
+    height: auto;
+  }
+}
+
+nav {
+  gap: 28px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  height: 64px;
+  margin-right: auto;
+}
+
+.links>a,
+.dd>a {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  padding: 0;
+  border: 0;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  white-space: nowrap;
+}
+
+.links>a::after,
+.dd>a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 14px;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transition: transform .25s;
+}
+
+.links>a:hover::after,
+.dd:hover>a::after {
+  transform: scaleX(1);
+}
+
+nav>.btn {
+  height: 38px;
+  padding: 0 18px;
+  line-height: 1;
+}
+
+@media (max-width: 860px) {
+  .links>a::after,
+  .dd>a::after {
+    display: none;
+  }
+
+  .links,
+  nav>.btn.o {
+    display: none;
+  }
+
+  .links.open {
+    display: flex;
+  }
+}
+
+
+
+/* css for hot nav link  */
+
+/* ---------- highlighted menu item with a badge (SSB Practice · NEW) ---------- */
+.links .nav-hot {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.links .nav-hot.active {
+  border-color: var(--gold);
+}
+
+.nav-badge {
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #ffc23d, var(--gold, #f4a31b));
+  color: #01094f; /* fixed: stays readable when the theme flips --navy in dark mode */
+  font-size: 10.5px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: .6px;
+  box-shadow: 0 0 0 0 rgba(244, 163, 27, .55);
+  animation: nav-badge-pulse 2.4s ease-out infinite;
+}
+
+@keyframes nav-badge-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(244, 163, 27, .55); }
+  70%, 100% { box-shadow: 0 0 0 8px rgba(244, 163, 27, 0); }
+}
+
+@media (max-width: 860px) {
+  .links .nav-hot {
+    padding: 10px 0;
+  }
+}
+
+/* keep the buttons on one line and tighten the menu on mid-size screens */
+nav > .btn {
+  white-space: nowrap;
+}
+
+@media (min-width: 861px) and (max-width: 1180px) {
+  .links {
+    gap: 16px;
+    font-size: 13.5px;
+  }
+}
+
+/* close css  */

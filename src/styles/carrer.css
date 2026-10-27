@@ -1,0 +1,553 @@
+/* ===== Enquire Now / Job apply page (.lwa- prefix) ===== */
+.lwa {
+  font-family: Inter, system-ui, sans-serif;
+  color: #0f1b33;
+  background: #f4f7fe;
+  padding-bottom: clamp(40px, 6vw, 80px);
+}
+.lwa *,
+.lwa *::before,
+.lwa *::after {
+  box-sizing: border-box;
+}
+.lwa-w {
+  width: min(1200px, 92%);
+    margin: 48px auto;
+  /* margin-top: 80px; */
+}
+
+/* ---- banner ---- */
+.lwa-hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  padding: clamp(34px, 5vw, 62px) 0 clamp(74px, 9vw, 112px);
+  background: radial-gradient(520px 280px at 88% 0%, rgba(244, 163, 27, 0.3), transparent 65%),
+    linear-gradient(120deg, #061640 0%, #12306e 62%, #3a3a3a 140%);
+}
+.lwa-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1.6px) 0 0 / 20px 20px;
+  -webkit-mask: linear-gradient(90deg, #000, transparent 75%);
+  mask: linear-gradient(90deg, #000, transparent 75%);
+}
+.lwa-hero .lwa-w {
+  position: relative;
+}
+.lwa-crumb {
+  margin-bottom: 16px;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.lwa-crumb a {
+  color: #ffd36b;
+  text-decoration: none;
+}
+.lwa-crumb a:hover {
+  text-decoration: underline;
+}
+.lwa-chip {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #ffd36b;
+  background: rgba(255, 211, 107, 0.1);
+  border: 1px solid rgba(255, 211, 107, 0.35);
+}
+.lwa-hero h1 {
+  margin: 14px 0 10px;
+  font-size: clamp(34px, 5.4vw, 56px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.lwa-hero p {
+  margin: 0;
+  max-width: 560px;
+  font-size: clamp(14.5px, 1.5vw, 17px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+/* ---- layout ---- */
+.lwa-body {
+  position: relative;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  margin-top: clamp(-62px, -5vw, -44px);
+  align-items: start;
+}
+
+/* ---- side panel ---- */
+.lwa-side {
+  position: sticky;
+  top: 100px;
+  padding: 28px 26px;
+  border-radius: 22px;
+  color: #fff;
+  background: radial-gradient(320px 200px at 100% 0%, rgba(244, 163, 27, 0.28), transparent 65%),
+    linear-gradient(150deg, #061640, #12306e);
+  box-shadow: 0 30px 50px -34px rgba(6, 22, 64, 0.8);
+}
+.lwa-side h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 900;
+}
+.lwa-side > p {
+  margin: 0 0 20px;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.8);
+}
+.lwa-side > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 16px;
+}
+.lwa-side li {
+  display: grid;
+  gap: 3px;
+  padding-left: 14px;
+  border-left: 3px solid #f4a31b;
+}
+.lwa-side li small {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #ffd36b;
+}
+.lwa-side li a,
+.lwa-side li span {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: #fff;
+  text-decoration: none;
+  word-break: break-word;
+}
+.lwa-side li a:hover {
+  text-decoration: underline;
+}
+.lwa-tips {
+  margin-top: 24px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.lwa-tips h3 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 800;
+}
+.lwa-tips ul {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 5px;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.82);
+}
+.lwa-tips li {
+  display: list-item;
+  padding: 0;
+  border: 0;
+}
+
+/* ---- form card ---- */
+.lwa-card {
+  padding: clamp(22px, 4vw, 40px);
+  border-radius: 22px;
+  background: #fff;
+  border: 1px solid #e3e9f6;
+  box-shadow: 0 24px 44px -30px rgba(11, 42, 94, 0.6);
+}
+.lwa-step {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 6px 0 18px;
+}
+.lwa-step:not(:first-child) {
+  margin-top: 30px;
+  padding-top: 26px;
+  border-top: 1px solid #e8edf7;
+}
+.lwa-step b {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 900;
+  color: #10163a;
+  background: linear-gradient(135deg, #ffc24d, #f4a31b);
+}
+.lwa-step h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: #0b2a5e;
+}
+.lwa-step p {
+  margin: 2px 0 0;
+  font-size: 13.5px;
+  color: #6b7488;
+}
+
+.lwa-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 16px;
+}
+.lwa-f {
+  margin-bottom: 16px;
+  min-width: 0;
+  position: relative;
+}
+.lwa-f label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1d2a48;
+}
+.lwa-f label span {
+  color: #d93025;
+}
+.lwa-f label em {
+  font-style: normal;
+  font-weight: 500;
+  color: #8a94ab;
+}
+.lwa-f input[type='text'],
+.lwa-f input[type='tel'],
+.lwa-f input[type='email'],
+.lwa-f select,
+.lwa-f textarea {
+  width: 100%;
+  border: 1.5px solid #d6dcec;
+  border-radius: 12px;
+  background: #fff;
+  outline: 0;
+  color: #10163a;
+  font: 500 15px Inter, system-ui, sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.lwa-f input[type='text'],
+.lwa-f input[type='tel'],
+.lwa-f input[type='email'],
+.lwa-f select {
+  height: 48px;
+  padding: 0 14px;
+}
+.lwa-f textarea {
+  padding: 12px 14px;
+  resize: vertical;
+  min-height: 120px;
+  line-height: 1.5;
+}
+.lwa-f input::placeholder,
+.lwa-f textarea::placeholder {
+  color: #98a1b5;
+}
+.lwa-f select {
+  padding-right: 38px;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235b6475' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")
+    no-repeat right 14px center;
+}
+.lwa-f select.is-empty {
+  color: #98a1b5;
+}
+.lwa-f select option {
+  color: #10163a;
+}
+.lwa-f input:hover,
+.lwa-f select:hover,
+.lwa-f textarea:hover {
+  border-color: #b9c3dd;
+}
+.lwa-f input:focus,
+.lwa-f select:focus,
+.lwa-f textarea:focus {
+  border-color: #f4a31b;
+  box-shadow: 0 0 0 4px rgba(244, 163, 27, 0.2);
+}
+.lwa-f.has-err input,
+.lwa-f.has-err select,
+.lwa-f.has-err textarea {
+  border-color: #d93025;
+}
+.lwa-err {
+  margin: 5px 0 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #d93025;
+}
+.lwa-count {
+  display: block;
+  margin-top: 4px;
+  text-align: right;
+  font-size: 12px;
+  color: #8a94ab;
+}
+
+/* ---- upload ---- */
+.lwa-drop {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  width: 100%;
+  padding: 28px 16px;
+  cursor: pointer;
+  text-align: center;
+  border: 2px dashed #b9c3dd;
+  border-radius: 16px;
+  color: #0b2a5e;
+  background: #f8faff;
+  font-family: Inter, sans-serif;
+  transition: background 0.2s, border-color 0.2s, transform 0.2s;
+}
+.lwa-drop b {
+  font-size: 15.5px;
+  font-weight: 800;
+}
+.lwa-drop span {
+  font-size: 13.5px;
+  color: #6b7488;
+}
+.lwa-drop u {
+  color: #12306e;
+  font-weight: 700;
+}
+.lwa-drop:hover,
+.lwa-drop.is-drag {
+  background: #eef3ff;
+  border-color: #f4a31b;
+}
+.lwa-drop.is-drag {
+  transform: scale(1.01);
+}
+.lwa-drop:focus-visible,
+.lwa-btn:focus-visible,
+.lwa-file button:focus-visible {
+  outline: 3px solid #f4a31b;
+  outline-offset: 3px;
+}
+.lwa-f.has-err .lwa-drop {
+  border-color: #d93025;
+}
+.lwa-file {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f1f6ff;
+  border: 1.5px solid #c9d7f7;
+}
+.lwa-fi {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 900;
+  color: #fff;
+  background: #12306e;
+}
+.lwa-file div {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+.lwa-file b {
+  font-size: 14px;
+  color: #0b2a5e;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lwa-file small {
+  font-size: 12.5px;
+  color: #6b7488;
+}
+.lwa-file button {
+  flex: none;
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #4b5567;
+  background: #fff;
+  transition: background 0.2s, color 0.2s;
+}
+.lwa-file button:hover {
+  color: #fff;
+  background: #d93025;
+}
+
+/* ---- consent + submit ---- */
+.lwa-agree {
+  margin: 4px 0 18px;
+}
+.lwa-agree label {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  cursor: pointer;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: #34405a;
+}
+.lwa-agree input {
+  flex: none;
+  width: 19px;
+  height: 19px;
+  margin-top: 2px;
+  accent-color: #f4a31b;
+  cursor: pointer;
+}
+.lwa-agree.has-err label {
+  color: #d93025;
+}
+.lwa-fail {
+  margin: 0 0 14px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #8a1d14;
+  background: #fdecea;
+}
+.lwa-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 220px;
+  height: 52px;
+  padding: 0 32px;
+  border: 0;
+  border-radius: 14px;
+  cursor: pointer;
+  font: 800 16px Inter, system-ui, sans-serif;
+  color: #10163a;
+  background: linear-gradient(135deg, #ffc24d, #f4a31b);
+  box-shadow: 0 16px 26px -14px rgba(244, 163, 27, 0.9);
+  transition: transform 0.2s, filter 0.2s;
+}
+.lwa-btn:hover {
+  transform: translateY(-2px);
+  filter: saturate(1.1);
+}
+.lwa-btn:disabled {
+  opacity: 0.75;
+  cursor: progress;
+  transform: none;
+}
+.lwa-spin {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(16, 22, 58, 0.25);
+  border-top-color: #10163a;
+  animation: lwa-rot 0.7s linear infinite;
+}
+@keyframes lwa-rot {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ---- success ---- */
+.lwa-done {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  padding: clamp(30px, 6vw, 60px) 10px;
+}
+.lwa-ok {
+  display: grid;
+  place-items: center;
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  color: #fff;
+  background: linear-gradient(135deg, #2fbf71, #14935a);
+  box-shadow: 0 0 0 10px rgba(47, 191, 113, 0.15);
+}
+.lwa-done h2 {
+  margin: 0 0 8px;
+  font-size: 26px;
+  font-weight: 900;
+  color: #0b2a5e;
+}
+.lwa-done p {
+  margin: 0 0 24px;
+  max-width: 420px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #5b6475;
+}
+
+/* ---- responsive ---- */
+@media (max-width: 960px) {
+  .lwa-body {
+    grid-template-columns: 1fr;
+    margin-top: -44px;
+  }
+  .lwa-card {
+    order: -1;
+  }
+  .lwa-side {
+    position: static;
+  }
+}
+@media (max-width: 600px) {
+  .lwa-row {
+    grid-template-columns: 1fr;
+  }
+  .lwa-card,
+  .lwa-side {
+    border-radius: 18px;
+  }
+  .lwa-btn {
+    width: 100%;
+  }
+  /* 16px: iPhone input par zoom nahi karega */
+  .lwa-f input[type='text'],
+  .lwa-f input[type='tel'],
+  .lwa-f input[type='email'],
+  .lwa-f select,
+  .lwa-f textarea {
+    font-size: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lwa *,
+  .lwa *::before {
+    transition-duration: 0.01s !important;
+    animation: none !important;
+  }
+}

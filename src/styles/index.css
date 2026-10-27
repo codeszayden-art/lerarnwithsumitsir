@@ -1,0 +1,10 @@
+/* Global entry point. Section styles are imported next to their components. */
+@import './base/variables.css';
+@import './base/reset.css';
+@import './base/animations.css';
+@import './base/buttons.css';
+@import './layout/topbar.css';
+@import './layout/header.css';
+@import './layout/footer.css';
+@import './layout/floating.css';
+@import './layout/app-shell.css';

@@ -1,0 +1,494 @@
+/* =====================================================
+   Shared @keyframes
+   ===================================================== */
+
+@keyframes bob {
+  50% {
+    transform: translateY(-9px);
+  }
+}
+
+@keyframes slide {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes kb {
+  from {
+    transform: scale(1.18);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes shine {
+  to {
+    left: 135%;
+  }
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+@keyframes ping {
+  0% {
+    box-shadow: 0 0 0 0 rgba(244, 163, 27, .7);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(244, 163, 27, 0);
+  }
+}
+
+@keyframes jet {
+  50% {
+    transform: translate(-18px, -16px) rotate(-6deg);
+  }
+}
+
+@keyframes pan {
+  from {
+    transform: scale(1.18) translateX(-2.5%);
+  }
+  to {
+    transform: scale(1.18) translateX(2.5%);
+  }
+}
+
+@keyframes fl {
+  50% {
+    transform: translateY(-14px) rotate(var(--r));
+  }
+}
+
+@keyframes rkspin {
+  50% {
+    transform: scale(1.35) rotate(20deg);
+  }
+}
+
+@keyframes rkgold {
+  to {
+    background-position: -200% 0;
+  }
+}
+
+@keyframes rkshine {
+  0%,
+  70% {
+    left: -60%;
+  }
+  100% {
+    left: 140%;
+  }
+}
+
+@keyframes rkpop {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(.85);
+  }
+}
+
+@keyframes cardIn {
+  from {
+    opacity: 0;
+    transform: translateY(46px) rotateX(14deg) scale(.92);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes floaty {
+  0%,
+  100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -4px;
+  }
+}
+
+@keyframes abDrift {
+  to {
+    transform: translate(50px, -40px) scale(1.15);
+  }
+}
+
+@keyframes abDot {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes abPulse {
+  70% {
+    box-shadow: 0 0 0 9px rgba(31, 191, 117, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(31, 191, 117, 0);
+  }
+}
+
+@keyframes abKen {
+  to {
+    transform: scale(1.12) translateX(-2%);
+  }
+}
+
+@keyframes abBlink {
+  50% {
+    opacity: .25;
+    transform: scale(.7);
+  }
+}
+
+@keyframes abFloat {
+  50% {
+    transform: translateY(-12px) rotate(1.5deg);
+  }
+}
+
+@keyframes abRing {
+  70% {
+    box-shadow: 0 0 0 10px rgba(225, 29, 46, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(225, 29, 46, 0);
+  }
+}
+
+@keyframes cn-kb {
+  from {
+    transform: scale(1.14);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+
+@keyframes cn-orb {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+  to {
+    transform: translate(3%, -4%) scale(1.1);
+  }
+}
+
+@keyframes cn-float {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes cn-fill {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes cn-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cn-img {
+  from {
+    opacity: 0;
+    transform: translateX(-22px) scale(.97);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes cn-zoom {
+  from {
+    transform: scale(1.14);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes cn-sheen {
+  to {
+    transform: translateX(130%);
+  }
+}
+
+@keyframes cn-ping {
+  0% {
+    transform: scale(1);
+    opacity: .9;
+  }
+  100% {
+    transform: scale(3.4);
+    opacity: 0;
+  }
+}
+
+@keyframes ssbx-run {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes ssbx-pop {
+  from {
+    opacity: 0;
+    translate: 0 46px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@keyframes lwsx-fill {
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes lwsx-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lwsx-shine {
+  0%,
+  55% {
+    transform: translateX(-120%);
+  }
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes lwsx-pulse {
+  70% {
+    box-shadow: 0 0 0 12px rgba(244, 163, 27, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(244, 163, 27, 0);
+  }
+}
+
+@keyframes lwsx-pop {
+  0% {
+    transform: scale(.3) rotate(-18deg);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes lwsx-up {
+  0% {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes lwsx-star {
+  0% {
+    transform: scale(0) rotate(-90deg);
+    opacity: 0;
+  }
+  100% {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes lwsx-float {
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes lwsx-grow {
+  from {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes lwsx-border {
+  to {
+    background-position: -250% 0;
+  }
+}
+
+@keyframes lwsx-drift {
+  to {
+    transform: translate(-50px, 40px) scale(1.12);
+  }
+}
+
+@keyframes chxA {
+  to {
+    transform: translate(6vw, -4vw) scale(1.2);
+  }
+}
+
+@keyframes chxG {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes chxU {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: .9;
+  }
+  100% {
+    transform: translateY(-470px);
+    opacity: 0;
+  }
+}
+
+@keyframes chxSh {
+  to {
+    background-position: -250% 0;
+  }
+}
+
+@keyframes chxR {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes chxF {
+  50% {
+    translate: 0 -8px;
+  }
+}
+
+@keyframes chxS {
+  0%,
+  55% {
+    transform: translateX(-130%);
+  }
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+@keyframes chxTw {
+  50% {
+    opacity: .25;
+  }
+}
+
+@keyframes chxFly {
+  from {
+    transform: translateX(-420px);
+  }
+  to {
+    transform: translateX(1900px);
+  }
+}
+
+@keyframes chxBm {
+  from {
+    transform: rotate(calc(var(--r)*-1));
+  }
+  to {
+    transform: rotate(var(--r));
+  }
+}
+
+@keyframes sbkSh {
+  to {
+    background-position: -250% 0;
+  }
+}
+
+@keyframes sbkSw {
+  0%,
+  35% {
+    left: -40%;
+  }
+  100% {
+    left: 130%;
+  }
+}
+
+@keyframes sbkPu {
+  0% {
+    transform: scale(.96);
+    opacity: .9;
+  }
+  100% {
+    transform: scale(1.18);
+    opacity: 0;
+  }
+}
+
+@keyframes sbkRo {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes sbkFl {
+  50% {
+    translate: 0 -9px;
+  }
+}
+
+@keyframes lwaSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes lwaBob {
+  50% {
+    transform: translateY(-1.2cqw) rotate(2deg);
+  }
+}

@@ -1,0 +1,51 @@
+/* =====================================================
+   Design tokens: colours, radii, shadows and the dark theme
+   ===================================================== */
+
+:root {
+  --bg: #fff;
+  --bg2: #f6f5f1;
+  --card: #fff;
+  --ink: #0f1b33;
+  --mut: #5b6578;
+  --line: #e3e8f3;
+  --navy: #01094f;
+  --blue: #01094f;
+  --gold: #f4a31b;
+  --green: #e08a00;
+  --dark: #01094f;
+  --shadow: 0 8px 30px rgba(20, 40, 90, .10);
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #070b24;
+    --bg2: #0d1236;
+    --card: #101640;
+    --ink: #eaf0ff;
+    --mut: #9fb0d0;
+    --line: #232b66;
+    --navy: #eaf0ff;
+    --blue: #f4a31b;
+    --shadow: 0 8px 30px rgba(0, 0, 0, .4);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #070b24;
+  --bg2: #0d1236;
+  --card: #101640;
+  --ink: #eaf0ff;
+  --mut: #9fb0d0;
+  --line: #232b66;
+  --navy: #eaf0ff;
+  --blue: #f4a31b;
+  --shadow: 0 8px 30px rgba(0, 0, 0, .4);
+}
+
+:root {
+  --img: none;
+}

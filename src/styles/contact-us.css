@@ -1,0 +1,299 @@
+/* ============================================================
+   Contact Us Page — LWS
+   ============================================================ */
+
+.ct {
+  font-family: Inter, system-ui, sans-serif;
+  color: #0f1b33;
+  background: #f4f7fe;
+}
+.ct *,
+.ct *::before,
+.ct *::after {
+  box-sizing: border-box;
+}
+.ct-w {
+  width: min(1200px, 92%);
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ---------------- HERO ---------------- */
+.ct-hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  padding: clamp(60px, 8vw, 100px) 0 clamp(50px, 6vw, 80px);
+  background:
+    linear-gradient(120deg, rgba(6, 22, 64, 0.9) 0%, rgba(18, 48, 110, 0.85) 100%),
+    var(--ct-banner, linear-gradient(120deg, #061640, #12306e)) center / cover no-repeat;
+}
+.ct-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1.6px) 0 0 / 22px 22px;
+  -webkit-mask: radial-gradient(circle at 50% 30%, #000, transparent 75%);
+  mask: radial-gradient(circle at 50% 30%, #000, transparent 75%);
+  pointer-events: none;
+}
+.ct-hero h1 {
+  position: relative;
+  margin: 0 0 14px;
+  font-size: clamp(36px, 5vw, 54px);
+  line-height: 1.1;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
+}
+.ct-hero h1 em {
+  font-style: normal;
+  color: #ffc24d;
+}
+.ct-hero p {
+  position: relative;
+  margin: 0 auto;
+  max-width: 600px;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ---------------- MAIN SECTION ---------------- */
+.ct-main {
+  padding: clamp(48px, 6vw, 80px) 0;
+  margin-top: -40px;
+  position: relative;
+  z-index: 10;
+}
+
+.ct-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 28px;
+  align-items: stretch; /* Make both columns same height */
+}
+
+/* Shared Card Style */
+.ct-card {
+  background: #fff;
+  border-radius: 24px;
+  border: 1px solid #e3e9f6;
+  box-shadow: 0 20px 50px -24px rgba(11, 42, 94, 0.25);
+  padding: 34px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------- LEFT: INFO ---------------- */
+.ct-info h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 900;
+  color: #0b2a5e;
+}
+.ct-info > p {
+  margin: 0 0 28px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: #4b5567;
+}
+
+.ct-item {
+  display: flex;
+  gap: 16px;
+  padding: 18px 0;
+  border-bottom: 1px solid #eef1f7;
+}
+.ct-item:last-of-type {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+.ct-item-ic {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  background: #eef3ff;
+  color: #0b2a5e;
+}
+.ct-item-ic svg {
+  width: 22px;
+  height: 22px;
+}
+.ct-item-body h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #0b2a5e;
+}
+.ct-item-body p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #4b5567;
+}
+.ct-item-body a {
+  color: #12306e;
+  text-decoration: none;
+  font-weight: 600;
+}
+.ct-item-body a:hover {
+  text-decoration: underline;
+}
+
+/* Map Embed */
+.ct-map {
+  margin-top: 24px;
+  width: 100%;
+  flex: 1; /* Take remaining height */
+  min-height: 200px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e3e9f6;
+  background: #eef3ff;
+}
+
+/* ---------------- RIGHT: FORM ---------------- */
+.ct-form h2 {
+  margin: 0 0 8px;
+  font-size: 24px;
+  font-weight: 900;
+  color: #0b2a5e;
+}
+.ct-form > p {
+  margin: 0 0 28px;
+  font-size: 14.5px;
+  color: #4b5567;
+}
+
+.ct-fields {
+  display: grid;
+  gap: 16px;
+  flex: 1;
+}
+.ct-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Form controls */
+.ct-input-w {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ct-input-w label {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0b2a5e;
+  padding-left: 2px;
+}
+.ct-input-w input,
+.ct-input-w textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 1px solid #d1d9e8;
+  background: #f8faff;
+  color: #0f1b33;
+  font: 500 14.5px Inter, system-ui, sans-serif;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.ct-input-w textarea {
+  resize: vertical;
+  min-height: 120px;
+  flex: 1;
+}
+.ct-input-w input:focus,
+.ct-input-w textarea:focus {
+  border-color: #f4a31b;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(244, 163, 27, 0.15);
+}
+.ct-input-w input.bad,
+.ct-input-w textarea.bad {
+  border-color: #e11d48;
+  background: #fff5f6;
+}
+.ct-input-w small {
+  color: #e11d48;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Submit Button */
+.ct-submit {
+  margin-top: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 15px 22px;
+  border: 0;
+  border-radius: 99px;
+  cursor: pointer;
+  font: 800 15px Inter, system-ui, sans-serif;
+  color: #fff;
+  background: #10163a;
+  transition: background 0.2s, transform 0.2s;
+}
+.ct-submit:hover {
+  background: #12306e;
+  transform: translateY(-2px);
+}
+.ct-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Status messages */
+.ct-alert {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+.ct-alert.ok {
+  background: #ecfdf5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+}
+.ct-alert.err {
+  background: #fef2f2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 900px) {
+  .ct-grid {
+    grid-template-columns: 1fr;
+  }
+  .ct-main {
+    margin-top: -30px;
+  }
+}
+@media (max-width: 600px) {
+  .ct-row {
+    grid-template-columns: 1fr;
+  }
+  .ct-card {
+    padding: 26px 22px;
+    border-radius: 20px;
+  }
+  .ct-hero {
+    padding-top: 80px;
+    padding-bottom: 70px;
+  }
+}

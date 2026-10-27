@@ -1,0 +1,355 @@
+.pi {
+  --n: #01094f;
+  --g: #f4a31b;
+  --bg: #eef1ff;
+  --card: #fff;
+  --tx: #0f1b33;
+  --tx2: #5b6578;
+  --ln: rgba(1, 9, 79, 0.12);
+  padding: 40px 0;
+  background: var(--bg);
+  color: var(--tx);
+  font-family: Inter, system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .pi {
+    --bg: #0d1236;
+    --card: #141a4d;
+    --tx: #eaf0ff;
+    --tx2: #a9b8d8;
+    --ln: rgba(255, 255, 255, 0.14);
+  }
+}
+:root[data-theme='dark'] .pi {
+  --bg: #0d1236;
+  --card: #141a4d;
+  --tx: #eaf0ff;
+  --tx2: #a9b8d8;
+  --ln: rgba(255, 255, 255, 0.14);
+}
+.pi * {
+  box-sizing: border-box;
+}
+.pi-w {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.pi-steps {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  gap: 8px;
+}
+.pi-steps li {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--tx2);
+}
+.pi-steps b {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--ln);
+  font-size: 13px;
+}
+.pi-steps li.on {
+  color: var(--tx);
+}
+.pi-steps li.on b {
+  background: var(--n);
+  color: var(--g);
+}
+
+.pi-card {
+  background: var(--card);
+  border-radius: 24px;
+  padding: clamp(20px, 4vw, 40px);
+  box-shadow: 0 30px 60px -30px rgba(1, 9, 79, 0.4), 0 0 0 1px var(--ln);
+}
+.pi-center {
+  text-align: center;
+}
+.pi h2 {
+  margin: 0 0 6px;
+  font-size: clamp(22px, 3vw, 30px);
+  font-weight: 800;
+}
+.pi h4 {
+  margin: 20px 0 10px;
+  font-size: 14px;
+}
+.pi-sub {
+  margin: 0 0 18px;
+  color: var(--tx2);
+  font-size: 14.5px;
+}
+.pi-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.pi input {
+  padding: 13px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--ln);
+  background: transparent;
+  color: var(--tx);
+  font-size: 15px;
+  width: 100%;
+}
+.pi input:focus {
+  outline: 2px solid var(--g);
+}
+
+.pi-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.pi-chips button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 64px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  border: 1px solid var(--ln);
+  background: transparent;
+  color: var(--tx);
+  cursor: pointer;
+  transition: 0.2s;
+  font: inherit;
+}
+.pi-chips.t button {
+  flex-direction: row;
+  font-weight: 600;
+  font-size: 14px;
+}
+.pi-chips button:hover {
+  border-color: var(--g);
+}
+.pi-chips button.on {
+  background: var(--n);
+  color: #fff;
+  border-color: var(--n);
+  box-shadow: 0 10px 20px -10px var(--n);
+}
+.pi-chips button.on b {
+  color: var(--g);
+}
+
+.pi-cta {
+  margin-top: 24px;
+  padding: 14px 32px;
+  border: 0;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(100deg, var(--n), #2230a8);
+  transition: 0.25s;
+}
+.pi-cta:hover:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 26px -12px var(--n);
+}
+.pi-cta:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pi-ok {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 32px;
+  color: #fff;
+  background: #18b36b;
+}
+.pi-tips {
+  text-align: left;
+  max-width: 420px;
+  margin: 0 auto;
+  color: var(--tx2);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.pi-err {
+  color: #e5484d;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+.pi-room {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.pi-ai,
+.pi-me {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 340px;
+}
+.pi-ai {
+  background: linear-gradient(175deg, #3d1fa8, #1a0a74 55%, #0c0646);
+  color: #fff;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.pi-avatar {
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--n);
+  background: linear-gradient(145deg, #ffd27a, var(--g));
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.12);
+}
+.pi-ai.talk .pi-avatar {
+  animation: piPulse 1.1s ease-in-out infinite;
+}
+.pi-ai small {
+  margin-top: 10px;
+  opacity: 0.8;
+}
+.pi-q {
+  margin: 18px 0;
+  font-size: clamp(17px, 2vw, 21px);
+  font-weight: 700;
+  line-height: 1.4;
+  color: #ffd27a;
+}
+.pi-count {
+  margin-top: auto;
+  font-size: 12px;
+  opacity: 0.7;
+}
+.pi-me {
+  background: #05060d;
+}
+.pi-me video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+  position: absolute;
+  inset: 0;
+}
+.pi-live {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: rgba(229, 72, 77, 0.9);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+}
+.pi-tr {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 30px 16px 14px;
+  color: #fff;
+  font-size: 13px;
+  line-height: 1.4;
+  max-height: 45%;
+  overflow: auto;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+.pi-next {
+  grid-column: 1/-1;
+  margin: 4px auto 0;
+}
+
+.pi-total {
+  font-size: 14px;
+  color: var(--tx2);
+  margin-bottom: 18px;
+}
+.pi-total b {
+  font-size: 54px;
+  font-weight: 800;
+  color: var(--g);
+}
+.pi-bar {
+  display: grid;
+  grid-template-columns: 150px 1fr 48px;
+  gap: 12px;
+  align-items: center;
+  margin: 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+.pi-bar i {
+  height: 10px;
+  border-radius: 9px;
+  background: var(--ln);
+  overflow: hidden;
+}
+.pi-bar u {
+  display: block;
+  height: 100%;
+  border-radius: 9px;
+  background: linear-gradient(90deg, var(--g), #ff8a00);
+  transition: width 1s;
+}
+.pi-fb {
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--bg);
+  color: var(--tx2);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+@keyframes piPulse {
+  50% {
+    box-shadow: 0 0 0 14px rgba(244, 163, 27, 0.25);
+  }
+}
+@media (max-width: 720px) {
+  .pi-row,
+  .pi-room {
+    grid-template-columns: 1fr;
+  }
+  .pi-steps li {
+    font-size: 0;
+  }
+  .pi-steps li.on {
+    font-size: 0;
+  }
+  .pi-bar {
+    grid-template-columns: 1fr 1fr 44px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pi * {
+    animation: none !important;
+  }
+}

@@ -1,0 +1,348 @@
+/* =====================================================
+   Top rankers carousel
+   ===================================================== */
+
+.rankers {
+  position: relative;
+  padding: 46px 0 34px;
+  background: radial-gradient(60% 70% at 50% 0%, rgba(244, 163, 27, .14), transparent 70%), radial-gradient(40% 60% at 90% 100%, rgba(21, 88, 214, .08), transparent 70%), var(--bg);
+  overflow: hidden;
+}
+
+.rk-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: max-content;
+  margin: 0 auto 12px;
+  padding: 5px 16px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #01094f, #1b2a8c);
+  color: #ffd27a;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  box-shadow: 0 6px 18px rgba(1, 9, 79, .25);
+}
+
+.rk-eyebrow svg {
+  animation: rkspin 4s linear infinite;
+}
+
+.rk-h {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(26px, 3.8vw, 42px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: 1.2;
+  color: var(--navy);
+}
+
+.rk-h .hl {
+  display: inline-block;
+  background: linear-gradient(135deg, #1558d6, #3a7bff);
+  color: #fff;
+  padding: 0 10px;
+  border-radius: 6px;
+  transform: rotate(-2deg);
+  box-shadow: 0 8px 20px rgba(21, 88, 214, .35);
+}
+
+.rk-h em {
+  font-style: normal;
+  background: linear-gradient(90deg, #f4a31b, #ffcc55, #f4a31b);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rkgold 3.5s linear infinite;
+}
+
+.rk-sub {
+  text-align: center;
+  margin: 8px 0 0;
+  font-size: 14px;
+  color: var(--mut);
+}
+
+.rk-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 0 26px;
+}
+
+.rk-line i {
+  width: 34px;
+  height: 3px;
+  background: radial-gradient(circle, var(--gold) 1.4px, transparent 1.6px) 0 0/6px 3px repeat-x;
+}
+
+.rk-line u {
+  width: 70px;
+  height: 4px;
+  background: linear-gradient(90deg, #f4a31b, #ffcc55);
+  border-radius: 3px;
+}
+
+.rk-view {
+  max-width: 1180px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 16px 0 22px;
+  margin-top: -16px;
+  margin-bottom: -22px;
+}
+
+.rk-track {
+  display: flex;
+  gap: 4px;
+  will-change: transform;
+}
+
+.rk {
+  position: relative;
+  flex: 0 0 calc((100% - 28px) / 8);
+  aspect-ratio: 1/1;
+  background: linear-gradient(180deg, #060b5e, #0a1180);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  border-bottom: 3px solid #f4a31b;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .35s;
+  box-shadow: 0 4px 12px rgba(1, 9, 79, .18);
+}
+
+.rk::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -60%;
+  width: 40%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .45), transparent);
+  transform: skewX(-20deg);
+  animation: rkshine 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.rk:nth-child(2n)::after {
+  animation-delay: 1.5s;
+}
+
+.rk:nth-child(3n)::after {
+  animation-delay: 3s;
+}
+
+.rk:hover {
+  transform: translateY(-10px) scale(1.07);
+  z-index: 3;
+  box-shadow: 0 18px 34px rgba(1, 9, 79, .38), 0 0 0 2px #f4a31b, 0 0 24px rgba(244, 163, 27, .55);
+}
+
+.rk:hover::after {
+  animation: rkshine .8s ease-out 1;
+}
+
+.rk:hover .rk-p {
+  transform: scale(1.08) rotate(-2deg);
+}
+
+.rk:hover .rk-r b {
+  color: #ffd27a;
+  transform: scale(1.1);
+}
+
+.rk-t {
+  align-self: center;
+  margin-top: 6px;
+  background: #d9141c;
+  color: #fff;
+  font-size: clamp(8px, .9vw, 11px);
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 2px;
+  letter-spacing: .2px;
+}
+
+.rk-b {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  padding: 0 6%;
+  min-height: 0;
+}
+
+.rk-p {
+  flex: 0 0 48%;
+  aspect-ratio: 1/1;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: transform .35s;
+}
+
+.rk-p svg,
+.rk-p img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.rk-r {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.rk-r small {
+  font-size: clamp(7px, .8vw, 10px);
+  font-weight: 800;
+  color: #ffd27a;
+  letter-spacing: .5px;
+}
+
+.rk-r b {
+  font-size: clamp(17px, 2vw, 28px);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-top: 2px;
+  transition: transform .35s, color .35s;
+  transform-origin: left center;
+}
+
+.rk-n {
+  background: #f4a31b;
+  color: #0a1180;
+  text-align: center;
+  font-weight: 800;
+  font-size: clamp(8px, .95vw, 12px);
+  padding: 4px 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rankers .rk-eyebrow,
+.rankers .rk-h,
+.rankers .rk-sub,
+.rankers .rk-line {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s, transform .6s;
+}
+
+.rankers.in .rk-eyebrow,
+.rankers.in .rk-h,
+.rankers.in .rk-sub,
+.rankers.in .rk-line {
+  opacity: 1;
+  transform: none;
+}
+
+.rankers.in .rk-h {
+  transition-delay: .1s;
+}
+
+.rankers.in .rk-sub {
+  transition-delay: .2s;
+}
+
+.rankers.in .rk-line {
+  transition-delay: .3s;
+}
+
+.rk-view {
+  opacity: 0;
+  transition: opacity .6s .35s;
+}
+
+.rankers.in .rk-view {
+  opacity: 1;
+}
+
+.rankers.in .rk {
+  animation: rkpop .6s cubic-bezier(.2, .8, .2, 1) backwards;
+}
+
+.rankers.in .rk:nth-child(1) {
+  animation-delay: .4s;
+}
+
+.rankers.in .rk:nth-child(2) {
+  animation-delay: .5s;
+}
+
+.rankers.in .rk:nth-child(3) {
+  animation-delay: .6s;
+}
+
+.rankers.in .rk:nth-child(4) {
+  animation-delay: .7s;
+}
+
+.rankers.in .rk:nth-child(5) {
+  animation-delay: .8s;
+}
+
+.rankers.in .rk:nth-child(6) {
+  animation-delay: .9s;
+}
+
+.rankers.in .rk:nth-child(7) {
+  animation-delay: 1s;
+}
+
+.rankers.in .rk:nth-child(8) {
+  animation-delay: 1.1s;
+}
+
+@media (max-width: 1000px) {
+  .rk {
+    flex-basis: calc((100% - 16px) / 5);
+  }
+
+  .rk-r b {
+    font-size: clamp(20px, 3.2vw, 30px);
+  }
+}
+
+@media (max-width: 700px) {
+  .rk {
+    flex-basis: calc((100% - 8px) / 3);
+  }
+
+  .rk-t {
+    font-size: 10px;
+  }
+
+  .rk-r b {
+    font-size: 26px;
+  }
+
+  .rk-n {
+    font-size: 11px;
+  }
+
+  .rk-r small {
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rk::after,
+  .rk-eyebrow svg,
+  .rk-h em {
+    animation: none;
+  }
+}

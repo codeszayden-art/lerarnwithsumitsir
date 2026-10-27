@@ -1,0 +1,217 @@
+/* =====================================================
+   FAQ + enquiry form
+   ===================================================== */
+
+#enquire {
+  --e-navy: var(--navy, #01094f);
+  --e-gold: var(--gold, #f4a31b);
+  --e-card: var(--card, #fff);
+  --e-bg: var(--bg, #f4f6fb);
+  --e-ink: var(--ink, #0f1b33);
+  --e-line: var(--line, rgba(1, 9, 79, .14));
+}
+
+#enquire * {
+  box-sizing: border-box;
+}
+
+/* ---------- layout: FAQ wide (left), form narrow (right) ---------- */
+#enquire .enq-two {
+  display: grid;
+  grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 56px);
+  align-items: start;
+}
+
+#enquire .enq-faq h2 {
+  margin: 0 0 22px;
+}
+
+/* ---------- FAQ accordion ---------- */
+#enquire .enq-faq details {
+  border-bottom: 1px solid var(--e-line);
+}
+
+#enquire .enq-faq summary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 18px 4px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.4;
+  cursor: pointer;
+  list-style: none;
+}
+
+#enquire .enq-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+#enquire .enq-faq summary::marker {
+  content: '';
+}
+
+#enquire .enq-faq summary::after {
+  content: '+';
+  margin-left: auto;
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--e-bg);
+  color: var(--e-navy);
+  font-size: 18px;
+  font-weight: 700;
+  transition: .2s;
+}
+
+#enquire .enq-faq details[open] summary::after {
+  content: '−';
+  background: var(--e-navy);
+  color: var(--e-gold);
+}
+
+#enquire .enq-faq details p {
+  margin: 0;
+  padding: 0 40px 20px 4px;
+  color: #5b6578;
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* NDA / SSB chip */
+#enquire .enq-tag {
+  flex: none;
+  display: inline-block;
+  min-width: 52px;
+  padding: 3px 12px;
+  border-radius: 99px;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  background: #01094f;
+  color: #f4a31b;
+}
+
+#enquire .enq-tag.ssb {
+  background: #f4a31b;
+  color: #01094f;
+}
+
+/* ---------- form card ---------- */
+#enquire .enq-form {
+  position: sticky;
+  top: 100px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 1px solid var(--e-line);
+  background: var(--e-card);
+  box-shadow: 0 24px 48px -28px rgba(1, 9, 79, .55);
+}
+
+#enquire .enq-form h3 {
+  margin: 0;
+  padding: 18px;
+  text-align: center;
+  font-size: 18px;
+  background: var(--e-navy);
+  color: var(--e-gold);
+}
+
+#enquire .enq-form form {
+  display: grid;
+  gap: 14px;
+  padding: 22px;
+}
+
+#enquire .enq-form input,
+#enquire .enq-form select {
+  display: block;
+  width: 100%;
+  padding: 13px 14px;
+  border-radius: 10px;
+  border: 1.5px solid var(--e-line);
+  background: var(--e-bg);
+  color: var(--e-ink);
+  font: inherit;
+  font-size: 15px;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+
+#enquire .enq-form select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 38px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%2301094f' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+}
+
+#enquire .enq-form input:focus,
+#enquire .enq-form select:focus {
+  border-color: var(--e-gold);
+  box-shadow: 0 0 0 3px rgba(244, 163, 27, .25);
+}
+
+#enquire .enq-form .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px;
+  border-radius: 12px;
+  border: 0;
+  background: var(--e-gold);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: .2s;
+}
+
+#enquire .enq-form .btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 24px -12px var(--e-gold);
+}
+
+#enquire .enq-form .btn:disabled {
+  opacity: .6;
+  cursor: progress;
+}
+
+#enquire #ok {
+  display: none;
+  text-align: center;
+  font-weight: 600;
+  color: var(--green, #1a8f4a);
+}
+
+#enquire .form-error {
+  display: block;
+  margin: -6px 0 0;
+  color: #c62828;
+  font-size: 12px;
+}
+
+/* ---------- mobile ---------- */
+@media (max-width: 860px) {
+  #enquire .enq-two {
+    grid-template-columns: 1fr;
+  }
+
+  #enquire .enq-form {
+    position: static;
+  }
+
+  #enquire .enq-faq summary {
+    font-size: 15px;
+  }
+}

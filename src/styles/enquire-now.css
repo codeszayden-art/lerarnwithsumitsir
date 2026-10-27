@@ -1,0 +1,195 @@
+/* Enquire Now page: banner + form card */
+
+/* ---------- banner ---------- */
+.enq-banner {
+  padding: 56px 20px 120px;
+  color: #fff;
+  background:
+    linear-gradient(100deg, rgba(1, 9, 79, .95), rgba(1, 9, 79, .7)),
+    var(--banner-img) center / cover no-repeat,
+    linear-gradient(135deg, #01094f, #1d3fbf);
+}
+
+.enq-banner-in {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.enq-crumb {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, .75);
+}
+
+.enq-crumb a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.enq-banner h1 {
+  max-width: 700px;
+  margin: 0 0 12px;
+  font-size: clamp(28px, 5vw, 48px);
+  line-height: 1.15;
+}
+
+.enq-banner h1 em {
+  font-style: normal;
+  color: var(--gold, #f4a31b);
+}
+
+.enq-banner p {
+  max-width: 540px;
+  margin: 0;
+  font-size: clamp(15px, 2vw, 18px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, .85);
+}
+
+/* ---------- form card ---------- */
+.enq-main {
+  padding: 0 16px 64px;
+  background: var(--bg2, #f6f5f1);
+      margin-top: 134px;
+}
+
+.enq-card {
+  position: relative;
+  max-width: 560px;
+  margin: -76px auto 0;
+  padding: 32px;
+  border: 1px solid var(--line, #e3e8f3);
+  border-top: 4px solid var(--gold, #f4a31b);
+  border-radius: 20px;
+  background: var(--card, #fff);
+  color: var(--ink, #0f1b33);
+  box-shadow: 0 28px 60px rgba(1, 9, 79, .18);
+}
+
+.enq-card h2 {
+  margin: 0 0 4px;
+  font-size: 26px;
+}
+
+.enq-sub {
+  margin: 0 0 20px;
+  font-size: 14px;
+  color: var(--mut, #5b6578);
+}
+
+.enq-card label {
+  display: block;
+  margin: 16px 0 6px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.enq-card input,
+.enq-card select {
+  width: 100%;
+  height: 50px;
+  padding: 0 15px;
+  border: 1.5px solid var(--line, #e3e8f3);
+  border-radius: 12px;
+  background: var(--bg, #fff);
+  color: var(--ink, #0f1b33);
+  font: inherit;
+  font-size: 16px; /* stops iPhone from zooming in */
+  transition: border-color .2s, box-shadow .2s;
+}
+
+.enq-card input:focus,
+.enq-card select:focus {
+  border-color: var(--gold, #f4a31b);
+  outline: 0;
+  box-shadow: 0 0 0 4px rgba(244, 163, 27, .25);
+}
+
+.enq-card .bad {
+  border-color: #d93025;
+}
+
+.enq-card small {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #d93025;
+}
+
+.enq-alert {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(217, 48, 37, .1);
+  color: #d93025;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.enq-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 54px;
+  margin-top: 24px;
+  border: 0;
+  border-radius: 14px;
+  background: linear-gradient(120deg, #01094f, #1d3fbf);
+  color: #fff;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 12px 26px rgba(1, 9, 79, .28);
+  transition: transform .2s, filter .2s;
+}
+
+.enq-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.enq-btn:disabled {
+  opacity: .7;
+  cursor: progress;
+}
+
+/* ---------- success ---------- */
+.enq-done {
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.enq-tick {
+  display: grid;
+  place-items: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 18px;
+  border-radius: 50%;
+  background: #e6f6ec;
+  color: #0f9d58;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.enq-done p {
+  margin: 0;
+  color: var(--mut, #5b6578);
+}
+
+/* ---------- phone ---------- */
+@media (max-width: 600px) {
+  .enq-banner {
+    padding: 36px 18px 104px;
+  }
+
+  .enq-card {
+    margin-top: -64px;
+    padding: 24px 18px;
+  }
+}

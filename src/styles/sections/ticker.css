@@ -1,0 +1,22 @@
+/* =====================================================
+   Qualities ticker
+   ===================================================== */
+
+.tick {
+  background: var(--gold);
+  color: #01094f;
+  font-weight: 700;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 14px 0;
+  font-size: 14px;
+}
+
+.tick div {
+  display: inline-block;
+  animation: slide 55s linear infinite;
+}
+
+.tick span {
+  margin: 0 26px;
+}

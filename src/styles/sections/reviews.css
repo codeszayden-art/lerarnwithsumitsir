@@ -1,0 +1,65 @@
+/* =====================================================
+   Reviews marquee
+   ===================================================== */
+
+.sec {
+  padding: 60px 0;
+}
+
+.team {
+  display: flex;
+  gap: 18px;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.team .tr {
+  display: flex;
+  gap: 18px;
+  animation: slide 40s linear infinite;
+}
+
+.team:hover .tr {
+  animation-play-state: paused;
+}
+
+.rv {
+  flex: 0 0 280px;
+  border-radius: 12px;
+  background: #222;
+  color: #fff;
+  padding: 22px;
+  filter: grayscale(1);
+  transition: filter .3s, transform .3s;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(160deg, #555, #161616);
+}
+
+.rv:hover {
+  filter: none;
+  transform: translateY(-6px);
+}
+
+.rv .av {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #fff;
+  color: #222;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  margin-bottom: auto;
+}
+
+.rv small {
+  opacity: .75;
+}
+
+.stars {
+  color: #f7c52e;
+  letter-spacing: 2px;
+}

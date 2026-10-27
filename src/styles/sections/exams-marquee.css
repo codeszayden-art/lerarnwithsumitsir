@@ -1,0 +1,22 @@
+/* =====================================================
+   Exam marquee
+   ===================================================== */
+
+.mq {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 26px 0;
+}
+
+.mq div {
+  display: inline-block;
+  animation: slide 30s linear infinite;
+}
+
+.mq span {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--mut);
+  margin: 0 30px;
+  letter-spacing: -.5px;
+}

@@ -1,0 +1,418 @@
+/* ===== Results page (.rsp- prefix) ===== */
+.rsp {
+  font-family: Inter, system-ui, sans-serif;
+  color: #0f1b33;
+  background: #fff;
+}
+.rsp *,
+.rsp *::before,
+.rsp *::after {
+  box-sizing: border-box;
+}
+.rsp-w {
+  width: min(1320px, 94%);
+  margin: 0 auto;
+}
+
+/* ---- banner ---- */
+.rsp-hero {
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  padding: clamp(46px, 7vw, 92px) 0 clamp(52px, 7.5vw, 100px);
+  background: linear-gradient(
+      120deg,
+      rgba(6, 22, 64, 0.93) 0%,
+      rgba(18, 48, 110, 0.8) 60%,
+      rgba(6, 22, 64, 0.72) 100%
+    ),
+    var(--rsp-bg, linear-gradient(120deg, #061640, #12306e));
+  background-size: cover;
+  background-position: center;
+}
+.rsp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.4;
+  pointer-events: none;
+  background: radial-gradient(rgba(255, 255, 255, 0.14) 1px, transparent 1.6px) 0 0 / 20px 20px;
+  -webkit-mask: linear-gradient(180deg, #000, transparent 90%);
+  mask: linear-gradient(180deg, #000, transparent 90%);
+}
+.rsp-hero::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #f4a31b, #ffc24d, #f4a31b);
+}
+.rsp-hero .rsp-w {
+  position: relative;
+}
+.rsp-crumb {
+  margin-bottom: 16px;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.78);
+}
+.rsp-crumb a {
+  color: #ffd36b;
+  text-decoration: none;
+}
+.rsp-crumb a:hover {
+  text-decoration: underline;
+}
+.rsp-chip {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 99px;
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #ffd36b;
+  background: rgba(255, 211, 107, 0.1);
+  border: 1px solid rgba(255, 211, 107, 0.4);
+}
+.rsp-hero h1 {
+  margin: 16px 0 12px;
+  font-size: clamp(34px, 6vw, 64px);
+  line-height: 1.05;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+.rsp-hero h1 span {
+  color: #ffc24d;
+}
+.rsp-hero p {
+  margin: 0 auto;
+  max-width: 600px;
+  font-size: clamp(14.5px, 1.6vw, 17.5px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ---- sections ---- */
+.rsp-sec {
+  padding: clamp(46px, 6.5vw, 86px) 0 clamp(40px, 5.5vw, 70px);
+}
+.rsp-sec.alt {
+  background: #f4f7fe;
+}
+.rsp-sec.first {
+  padding-top: clamp(56px, 8vw, 100px);
+}
+.rsp-head {
+  text-align: center;
+  margin-bottom: clamp(18px, 3vw, 30px);
+}
+.rsp-eyebrow {
+  margin: 0 0 6px;
+  font-size: clamp(15px, 1.8vw, 19px);
+  font-weight: 700;
+  color: #3b4660;
+  letter-spacing: 0.005em;
+}
+.rsp-head h2 {
+  margin: 0;
+  font-size: clamp(25px, 4vw, 42px);
+  line-height: 1.15;
+  font-weight: 900;
+  color: #0b2a5e;
+  letter-spacing: -0.015em;
+}
+.rsp-head h2 span {
+  color: #f4a31b;
+}
+.rsp-dotline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 14px;
+}
+.rsp-dotline i {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #f4a31b;
+}
+.rsp-dotline u {
+  width: 52px;
+  height: 3px;
+  border-radius: 3px;
+  background: #f4a31b;
+}
+.rsp-empty {
+  margin: 0;
+  padding: 28px 18px;
+  text-align: center;
+  border: 2px dashed #c3cce2;
+  border-radius: 16px;
+  font-size: 14px;
+  color: #5b6475;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+/* ---- slider ---- */
+.rsp-sl {
+  --gap: 16px;
+  position: relative;
+}
+.rsp-track {
+  display: flex;
+  gap: var(--gap);
+  overflow-x: auto;
+  padding: 14px 4px 30px;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 4px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.rsp-track::-webkit-scrollbar {
+  display: none;
+}
+.rsp-slide {
+  flex: 0 0 calc((100% - var(--gap) * (var(--pv) - 1)) / var(--pv));
+  min-width: 0;
+  scroll-snap-align: start;
+}
+.rsp-sl.is-static .rsp-track {
+  justify-content: center;
+  overflow: visible;
+}
+
+.rsp-card {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  padding: 0;
+  overflow: hidden;
+  cursor: zoom-in;
+  border: 0;
+  border-radius: 16px;
+  background: #e9eefb;
+  box-shadow: 0 18px 32px -22px rgba(11, 42, 94, 0.7);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.rsp-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.5s;
+}
+.rsp-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 28px 44px -24px rgba(11, 42, 94, 0.75);
+}
+.rsp-card:hover img {
+  transform: scale(1.04);
+}
+.rsp-card:focus-visible {
+  outline: 3px solid #f4a31b;
+  outline-offset: 3px;
+}
+.rsp-zoom {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(6, 22, 64, 0.75);
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.rsp-card:hover .rsp-zoom,
+.rsp-card:focus-visible .rsp-zoom {
+  opacity: 1;
+  transform: none;
+}
+
+.rsp-nav {
+  position: absolute;
+  top: 42%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #0b2a5e;
+  background: #fff;
+  box-shadow: 0 12px 24px -8px rgba(6, 22, 64, 0.5);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.rsp-nav:hover {
+  color: #fff;
+  background: #0b2a5e;
+  transform: scale(1.08);
+}
+.rsp-nav:focus-visible {
+  outline: 3px solid #f4a31b;
+  outline-offset: 2px;
+}
+.rsp-nav.prev {
+  left: -14px;
+}
+.rsp-nav.next {
+  right: -14px;
+}
+.rsp-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: -8px;
+}
+.rsp-dots button {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 99px;
+  cursor: pointer;
+  background: #c3cce2;
+  transition: width 0.25s, background 0.25s;
+}
+.rsp-dots button.on {
+  width: 26px;
+  background: #f4a31b;
+}
+.rsp-dots button:focus-visible {
+  outline: 3px solid #0b2a5e;
+  outline-offset: 2px;
+}
+
+/* ---- lightbox ---- */
+.rsp-lb {
+  position: fixed;
+  inset: 0;
+  z-index: 2600;
+  display: grid;
+  place-items: center;
+  padding: 56px 64px;
+  background: rgba(4, 10, 32, 0.92);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  animation: rsp-fade 0.25s ease both;
+}
+.rsp-lb img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 30px 70px -20px rgba(0, 0, 0, 0.8);
+  animation: rsp-pop 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+.rsp-lb-x,
+.rsp-lb-n {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  transition: background 0.2s, transform 0.2s;
+}
+.rsp-lb-x:hover,
+.rsp-lb-n:hover {
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(1.08);
+}
+.rsp-lb-x:focus-visible,
+.rsp-lb-n:focus-visible {
+  outline: 3px solid #f4a31b;
+  outline-offset: 2px;
+}
+.rsp-lb-x {
+  top: 14px;
+  right: 14px;
+}
+.rsp-lb-n {
+  top: 50%;
+  margin-top: -23px;
+}
+.rsp-lb-n.prev {
+  left: 12px;
+}
+.rsp-lb-n.next {
+  right: 12px;
+}
+.rsp-lb-c {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 16px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.75);
+  pointer-events: none;
+}
+@keyframes rsp-fade {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes rsp-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+/* ---- responsive ---- */
+@media (max-width: 1180px) {
+  .rsp-nav.prev {
+    left: -6px;
+  }
+  .rsp-nav.next {
+    right: -6px;
+  }
+}
+@media (max-width: 640px) {
+  .rsp-sl {
+    --gap: 12px;
+  }
+  .rsp-nav {
+    display: none;
+  }
+  .rsp-card {
+    border-radius: 12px;
+  }
+  .rsp-lb {
+    padding: 56px 12px 48px;
+  }
+  .rsp-lb-n {
+    top: auto;
+    bottom: 10px;
+    margin-top: 0;
+  }
+  .rsp-lb-n.prev {
+    left: 14px;
+  }
+  .rsp-lb-n.next {
+    right: 14px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rsp *,
+  .rsp *::before {
+    transition-duration: 0.01s !important;
+    animation: none !important;
+  }
+}

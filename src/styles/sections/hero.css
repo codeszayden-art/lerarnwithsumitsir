@@ -1,0 +1,256 @@
+/* =====================================================
+   Hero slider
+   ===================================================== */
+
+.hero {
+  position: relative;
+  background: radial-gradient(900px 400px at 75% 40%, #cfdcff 0, transparent 70%), var(--bg);
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.lnk {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--blue);
+}
+
+.dots {
+  display: flex;
+  gap: 7px;
+  justify-content: center;
+  padding-bottom: 14px;
+}
+
+.dots b {
+  width: 8px;
+  height: 8px;
+  border-radius: 9px;
+  background: #b9c4e4;
+  transition: .3s;
+}
+
+.dots b.on {
+  width: 26px;
+  background: var(--blue);
+}
+
+.choose {
+  margin: -6px auto 40px;
+  max-width: 1120px;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  padding: 12px 18px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.choose a {
+  background: var(--bg2);
+  border-radius: 99px;
+  padding: 6px 12px;
+  font-weight: 500;
+  color: var(--blue);
+  transition: .2s;
+}
+
+.choose a:hover {
+  background: var(--blue);
+  color: #fff;
+}
+
+.hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.hero {
+  background: var(--bg);
+}
+
+.streak {
+  position: absolute;
+  right: 2%;
+  top: -10%;
+  width: 50%;
+  height: 125%;
+  background: linear-gradient(115deg, transparent 0 18%, rgba(244, 163, 27, .22) 18% 34%, transparent 34% 42%, rgba(1, 9, 79, .10) 42% 72%, transparent 72%);
+  transform: skewX(-12deg);
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+.slides {
+  position: relative;
+  height: 460px;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .6s, visibility .6s;
+}
+
+.slide.on {
+  opacity: 1;
+  visibility: visible;
+}
+
+.htx {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 30px 30px;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity .6s .15s, transform .6s .15s;
+}
+
+.slide.on .htx {
+  opacity: 1;
+  transform: none;
+}
+
+.htx h1 {
+  margin: 0;
+  font-size: clamp(26px, 3.3vw, 40px);
+  line-height: 1.12;
+  letter-spacing: -1.3px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.htx h1 span {
+  display: block;
+  color: var(--ink);
+}
+
+.htx p {
+  color: var(--mut);
+  margin: 14px 0 24px;
+  font-size: 13px;
+}
+
+.fig {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  opacity: 0;
+  transform: scale(.97);
+  transform-origin: 50% 100%;
+  transition: opacity .6s .1s, transform .7s .1s;
+}
+
+.slide.on .fig {
+  opacity: 1;
+  transform: none;
+}
+
+.arr {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 0;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  z-index: 3;
+  line-height: 1;
+}
+
+.arr.l {
+  left: -6px;
+}
+
+.arr.r {
+  right: -6px;
+}
+
+.dots {
+  padding: 14px 0 6px;
+}
+
+@media (max-width: 860px) {
+  .slides {
+    height: 640px;
+  }
+
+  .htx {
+    width: 100%;
+    bottom: auto;
+    height: 300px;
+    padding: 30px 0 0;
+  }
+
+  .fig {
+    width: 100%;
+    top: auto;
+    height: 300px;
+  }
+
+  .streak {
+    width: 90%;
+    right: -10%;
+  }
+}
+
+.htx {
+  z-index: 2;
+}
+
+.streak {
+  transition: opacity .6s;
+}
+
+.hero.rz-on .streak {
+  opacity: 0;
+}
+
+.fig.rz {
+  left: 0;
+  right: 0;
+  width: auto;
+  pointer-events: none;
+}
+
+@media (max-width: 860px) {
+  .fig.rz {
+    height: 330px;
+  }
+}
+
+.fig.full {
+  overflow: hidden;
+}
+
+.fig.full img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  display: block;
+}

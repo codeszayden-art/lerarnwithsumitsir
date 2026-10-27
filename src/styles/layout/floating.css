@@ -1,0 +1,148 @@
+/* =====================================================
+   Floating quick-action rail (left edge, collapsible)
+   ===================================================== */
+.fa-rail {
+  --fa-bg: #01094f;
+  --fa-bg-hover: #0b1a86;
+  --fa-fg: #fff;
+  --fa-accent: var(--gold, #f4a31b);
+  --fa-size: 46px;
+
+  position: fixed;
+  left: 0;
+  top: 50%;
+  z-index: 88; /* above the header (80), below the mobile tab bar (90) */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: env(safe-area-inset-left, 0px);
+  transform: translateY(-50%);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .fa-rail {
+    --fa-bg: #141f7a;
+    --fa-bg-hover: #1f2da0;
+  }
+}
+
+:root[data-theme="dark"] .fa-rail {
+  --fa-bg: #141f7a;
+  --fa-bg-hover: #1f2da0;
+}
+
+/* ---------- toggle (arrow tab) ---------- */
+.fa-toggle {
+  display: grid;
+  place-items: center;
+  width: var(--fa-size);
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 0 12px 0 0;
+  background: var(--fa-accent);
+  color: #01094f;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: 0 6px 18px rgba(1, 9, 79, .3);
+  transition: border-radius .3s, filter .2s;
+}
+
+.fa-toggle:hover { filter: brightness(1.08); }
+.fa-toggle span { transition: transform .25s; }
+.fa-toggle:hover span { transform: translateX(2px); }
+.fa-rail.open .fa-toggle:hover span { transform: translateX(-2px); }
+.fa-rail:not(.open) .fa-toggle { border-radius: 0 12px 12px 0; }
+
+/* ---------- list ---------- */
+.fa-list {
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  background: var(--fa-bg);
+  border-radius: 0 0 14px 0;
+  box-shadow: 0 14px 34px rgba(1, 9, 79, .35);
+  transition: transform .38s cubic-bezier(.2, .8, .2, 1), opacity .25s, visibility 0s .38s;
+}
+
+.fa-rail:not(.open) .fa-list {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(-105%);
+}
+
+.fa-rail.open .fa-list { transition-delay: 0s; }
+
+/* ---------- items ---------- */
+.fa-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--fa-size);
+  color: var(--fa-fg);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.fa-ic {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  flex: none;
+  place-items: center;
+  width: var(--fa-size);
+  height: 100%;
+  transition: color .2s, transform .2s;
+}
+
+.fa-label {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px 0 var(--fa-size);
+  border-radius: 0 12px 12px 0;
+  background: var(--fa-bg-hover);
+  box-shadow: 8px 6px 20px rgba(1, 9, 79, .3);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path .28s ease;
+}
+
+.fa-item:hover .fa-label,
+.fa-item:focus-visible .fa-label { clip-path: inset(0 0 0 0); }
+
+.fa-item:hover .fa-ic,
+.fa-item:focus-visible .fa-ic {
+  color: var(--fa-accent);
+  transform: scale(1.08);
+}
+
+.fa-item:focus-visible,
+.fa-toggle:focus-visible {
+  outline: 3px solid var(--fa-accent);
+  outline-offset: -3px;
+}
+
+/* touch devices: icons only (no hover) */
+@media (hover: none) {
+  .fa-label { display: none; }
+}
+
+@media (max-width: 768px) {
+  .fa-rail { --fa-size: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fa-list, .fa-label, .fa-toggle, .fa-toggle span, .fa-ic { transition: none; }
+}
